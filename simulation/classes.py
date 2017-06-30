@@ -11,3 +11,6 @@ class classes:
   def getClass(self, name):
     print name #, self.__classDict
     return self.__classDict[name]
+
+  def isClass(self, name):
+    return name in self.__classDict
