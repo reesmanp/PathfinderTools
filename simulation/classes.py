@@ -9,7 +9,8 @@ class classes:
       }
 
   def getClass(self, name):
-    print name #, self.__classDict
+    if not self.isClass(name):
+      raise ValueError('Class does not exist')
     return self.__classDict[name]
 
   def isClass(self, name):
