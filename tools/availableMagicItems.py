@@ -1,12 +1,13 @@
 from dice import dice
 
 class community:
+  communitySizes = ['Thorp', 'Hamlet', 'Village', 'SmallTowm', 'LargeTown', 'SmallCity', 'LargeCity', 'Metropolis']
   diceBag = { '100': dice(100), '20': dice(20), '10': dice(10), '8': dice(8), '6': dice(6), '4': dice(4) }
   minor = medium = major = 0
 
   def __init__(self, size):
-    self.size = size
-    getattr(self, '_' + self.__class__.__name__ + '__' + size)()
+    self.size = communitySizes[size]
+    getattr(self, '_' + self.__class__.__name__ + '__' + self.size)()
   
   def __Thorp(self):
     self.baseValue = 50
